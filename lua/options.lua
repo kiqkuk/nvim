@@ -1,4 +1,4 @@
--- lua/options/lua
+-- lua/options.lua
 
 local opt = vim.opt
 
