@@ -8,13 +8,13 @@ lsp.config.clangd = {
     "--offset-encoding=utf-16",
   },
   filetypes = { "c", "cpp", "objc", "objcpp" },
-  root_dir = vim.fs.root(0, { ".git", "compile_commands.json", "build", "Makefile" }),
+  root_dir = vim.fs.root(0, { ".git", "compile_commands.json", "build", "Makefile" }) or vim.fn.getcwd(),
 }
 
 lsp.config.lua_ls = {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
-  root_dir = vim.fs.root(0, { ".git", "init.lua" }),
+  root_dir = vim.fs.root(0, { ".git", "init.lua" }) or vim.fn.getcwd(),
   settings = {
     Lua = {
       diagnostics = {
@@ -30,12 +30,25 @@ lsp.config.pyright = {
     "--stdio",
   },
   filetypes = { "python" },
-  root_dir = vim.fs.root(0, { ".git", "setup.py", "pyproject.toml", "requirements.txt" }),
+  root_dir = vim.fs.root(0, { ".git", "setup.py", "pyproject.toml", "requirements.txt" }) or vim.fn.getcwd(),
+}
+
+lsp.config.bashls = {
+  cmd = {
+    "bash-language-server",
+    "start",
+  },
+  filetypes = { "sh", "bash", "zsh" },
+  root_dir = vim.fs.root(0, { ".git", ".zshrc", ".bashrc" }) or vim.fn.getcwd(),
+  settings = {
+    bashIdiomSupport = true,
+  },
 }
 
 lsp.enable("clangd")
 lsp.enable("lua_ls")
 lsp.enable("pyright")
+lsp.enable("bashls")
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
