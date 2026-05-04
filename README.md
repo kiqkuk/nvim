@@ -1,19 +1,23 @@
-# Kiqkuk's Neovim configuration
+# nvim
 
-I build this with a "native-first" mindset after reading the Nvim 0.12.0 `news.txt`. My assumption is simple: using native and built-in features should be faster and less dependent on external plugins.  
+Yet another Neovim build. I'm trying to see how far I can go using only native features. No fancy plugin managers, just me and the `news.txt`.
 
-That said, this build isn't 100% plugin-free. I'm using `Catppuccin` as my one and only plugin. simply because I love it. :)
+## The goal
+I want a setup that's fast and doesn't break every time a plugin updates. I’m exploring the built-in features to keep things minimalist and clean.
 
-## Native/built-in features used:
-* Autocomplete
-* Treesitter
-* LSP
-* vim.pack
-* Diagnostic
+## What's native?
+Most of the core functionality is handled by Nvim itself:
+* **Autocomplete & LSP**: For the "smart" stuff.
+* **Treesitter**: For the colors.
+* **vim.pack**: To manage the very few things I actually need.
+* **Custom Statusline**: I made this myself to keep it lightweight.
 
-The statusline is custom-made.
+## The one exception
+I'm not a monster. I still use **Catppuccin** because it looks too good to ignore. It's the only plugin I use.
 
-### Installation:
-```
-cd ~/.config && git clone https://github.com/kiqkuk/nvim.git
-```
+## Tips?
+Inspired by Nvim 0.12.0. If you have tips on how to do things even more "native", let me know! I'm here to learn and simplify my workflow.
+
+## Installation
+```bash
+cd ~/.config && git clone [https://github.com/kiqkuk/nvim.git](https://github.com/kiqkuk/nvim.git)
