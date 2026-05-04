@@ -20,4 +20,4 @@ Inspired by Nvim 0.12.0. If you have tips on how to do things even more "native"
 
 ## Installation
 ```bash
-cd ~/.config && git clone [https://github.com/kiqkuk/nvim.git](https://github.com/kiqkuk/nvim.git)
+cd ~/.config && git clone https://github.com/kiqkuk/nvim.git
